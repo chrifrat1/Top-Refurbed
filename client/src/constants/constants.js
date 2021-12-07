@@ -1,0 +1,1 @@
+export const SAMSUNG_GALAXY_S21 = 'Samsung Galaxy S21';
