@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
 
 export default function ShowOrderHistory(){
@@ -29,9 +30,11 @@ export default function ShowOrderHistory(){
             <div>
             <h10> Delivery Details: {details.road}, {details.number}, {details.city}, {details.postcode} </h10>
             </div>
-            
+            <h10> Product: {details.item}</h10>
+            <h2>----------------------------------------------------------------------- </h2>
             
             </Box>
+            
           ))}
         </Box>
 

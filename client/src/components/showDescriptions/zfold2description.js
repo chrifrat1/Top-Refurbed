@@ -19,7 +19,10 @@ export default function zfold2description(){
             <Container>
                 <Grid >
                 <h2>Samsung Galaxy Z Fold 2</h2>
+                <div>
                 <h10>Description...</h10>
+                </div>
+                <h10>Price - £</h10>
                 <div>   
                 <Button color="inherit"><NavLink  color="inherit" to="/purchase">Purchase</NavLink></Button>
                 </div> 

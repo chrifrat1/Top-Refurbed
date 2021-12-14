@@ -1,7 +1,7 @@
 import Details from "../models/orderDetails.js";
 
 export const getDetails= async (req, res)=> {
-    //res.send('Router is working (Get Student)');
+    
 
     try {
         const allOrders= await Details.find();
@@ -13,7 +13,7 @@ export const getDetails= async (req, res)=> {
 }
 
 export const saveDetails= async (req, res)=> {
-    //res.send('Router is working (Create Student)');
+    
 
     const details=req.body;
 

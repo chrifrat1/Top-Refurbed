@@ -21,7 +21,7 @@ export default function ButtonAppBar() {
 
     const toLoginForm=()=>{
      // <Link to="/login">Login</Link>
-      alert("diobbestia")
+      
         
     }
   return (
@@ -41,8 +41,10 @@ export default function ButtonAppBar() {
             Top Refurbed              -                 
           </Typography>
           <Button color="inherit" ><NavLink className="link" color="inherit" to="/">Catalogue</NavLink></Button> 
+          <Button color="inherit"><NavLink className="link" color="inherit" to='/refund' > Refund Request</NavLink></Button>
           <Button color="inherit"><NavLink className="link" color="inherit" to="/login"> Login</NavLink></Button>
-          <Button color="inherit"><NavLink className="link" color="inherit" to="/adminLogin"> Private Section</NavLink></Button>
+          <Button color="inherit"><NavLink className="link" color="inherit" to="/adminlogin"> Private Section</NavLink></Button>
+          
           
           
         </Toolbar>

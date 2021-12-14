@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
+import {NavLink} from 'react-router-dom';
 
 
 export default function AdminLogin(){
@@ -16,8 +17,8 @@ export default function AdminLogin(){
     //const password;
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/admin').then((adminDets)=>{
-            setAdminDets(adminDets.data);
+        axios.get('http://localhost:5000/admin').then((admin)=>{
+            setAdminDets(admin.data);
         })
     }, [])
 
@@ -25,7 +26,7 @@ export default function AdminLogin(){
         //alert('porco di quel dio');
         //{adminDets.map((admin) => (
             
-            alert('mannaia la madonna')
+            //alert('mannaia la madonna')
             
             
           //))};
@@ -38,7 +39,7 @@ export default function AdminLogin(){
             <TextField required id="standard-basic" label="Username" variant="standard" />
             <TextField required type="password" id="standard-basic" label="Password" variant="standard" />
             <div>
-            <Button variant="contained" onClick={detailsValidation}>Log In</Button>
+            <Button variant="contained" onClick={detailsValidation}> <NavLink color="inherit" className="link" to='/adminMenu'>Log In</NavLink></Button>
             </div>
             <Box>
                 {adminDets.map((admin) => (        
@@ -46,6 +47,7 @@ export default function AdminLogin(){
                     
                 ))}
             </Box>
+            
         </Box>
         
     );

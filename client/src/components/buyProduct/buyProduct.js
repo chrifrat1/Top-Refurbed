@@ -14,12 +14,41 @@ import axios from 'axios';
 import {NavLink} from 'react-router-dom';
 import './buyProduct'
 
-import { SAMSUNG_GALAXY_S21 } from '../../constants/constants';
+import { APPLE_IPAD_PRO, Apple_Iphone_11_Pro, GOOGLE_PIXEL_6, HUAWEI_P20, SAMSUNG_GALAXY_S21, SAMSUNG_GALAXY_Z_FOLD_2 } from '../../constants/constants';
 import { Menu } from '@material-ui/core';
 
 
+const items = [
+  {
+    value: SAMSUNG_GALAXY_S21,
+    label: SAMSUNG_GALAXY_S21,
+  },
+  {
+    value: APPLE_IPAD_PRO,
+    label: APPLE_IPAD_PRO,
+  },
+  {
+    value: SAMSUNG_GALAXY_Z_FOLD_2,
+    label: SAMSUNG_GALAXY_Z_FOLD_2,
+  },
+  {
+    value: Apple_Iphone_11_Pro,
+    label: Apple_Iphone_11_Pro,
+  },
+  {
+    value: HUAWEI_P20,
+    label: HUAWEI_P20,
+  },
+  {
+    value: GOOGLE_PIXEL_6,
+    label: GOOGLE_PIXEL_6,
+  },
+];
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
+
+    
   
     return (
       <div
@@ -60,7 +89,7 @@ function TabPanel(props) {
       setValue(newValue);
     };
 
-    const handleChangeForm = (event, newValue) => {
+    const handleChangeForm = (event) => {
       setItem(event.target.value);
     };
   
@@ -93,22 +122,45 @@ function TabPanel(props) {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
+
+
+
+          
         <h4>Item</h4>
-        <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Item</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={item}
-              label="Item"
-              onChange={handleChangeForm}
-            >
-            <MenuItem value={SAMSUNG_GALAXY_S21} label='Item' onChange={(event) => 
-          { setOrderDets({...details,item: event.target.value})}}>{SAMSUNG_GALAXY_S21}</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-            </FormControl>
+
+        
+
+        <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+       
+        <TextField
+          id="outlined-select-item"
+          select
+          label="Select"
+          value={details.item}
+          onChange={(event) => 
+            {setOrderDets({...details,item: event.target.value})} }
+            //onChange={handleChangeForm} 
+          helperText="Please select your product"
+        >
+          {items.map((option) => (
+            <MenuItem key={option.value} value={option.value} >
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+     
+      </div>
+    </Box>
+  
+
 
             <h4>Recipient Details</h4>
             <TextField required id="filled-basic" label="Name" variant="filled" value={details.name} onChange={(event) => 
@@ -126,6 +178,8 @@ function TabPanel(props) {
           {setOrderDets({...details,city: event.target.value})}}/>
             <TextField required id="filled-basic" label="Post Code" variant="filled" value={details.postcode} onChange={(event) => 
           {setOrderDets({...details,postcode: event.target.value})}}/>
+
+
             <h4>Payment Details</h4>
 
 
@@ -138,7 +192,9 @@ function TabPanel(props) {
 
           
 
-            <Button variant="contained" onClick={orderProduct}><NavLink className="link" color="inherit" to="/orderConf">Buy Now</NavLink></Button>
+            <Button variant="contained" disabled={!details.item, !details.name, !details.surname, 
+              !details.road, !details.city,!details.number, !details.postcode, !details.cvv,
+              !details.cardnum, !details.expirydate} onClick={orderProduct}><NavLink className="link" color="inherit" to="/orderConf">Buy Now</NavLink></Button>
 
         </TabPanel>
         

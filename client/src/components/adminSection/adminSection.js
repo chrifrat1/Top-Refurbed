@@ -17,6 +17,9 @@ export default function AdminMenu(){
         <Box>
             <h2>Admin Menu</h2>
             <Button variant="contained"><NavLink className="link" color="inherit" to="/orderHistory">Show Orders</NavLink></Button>
+            <Button variant="contained">Add Product</Button>
+            <Button variant="contained"><NavLink className="link" color="inherit" to="/refundRequests" >Refund Requests</NavLink></Button>
+            
         </Box>
     );
 

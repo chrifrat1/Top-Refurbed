@@ -14,6 +14,9 @@ import Confirmation from './components/orderConfirmation/orderConfirmation.js'
 import AdminLogin from './components/adminSection/adminLogin.js'
 import AdminMenu from './components/adminSection/adminSection.js'
 import OrderHistory from './components/adminSection/orderHistory.js'
+import RefundForm from './components/Refund/refund.js'
+import RefundConfirmation from './components/Refund/refundSubmitted.js'
+import RefundRequests from './components/adminSection/showRefundReq.js'
 
 //import CreateAccount from './components/createAccount/createAccount.js'
 import NavBar from './NavBar.js';
@@ -86,6 +89,15 @@ function App() {
             </Route>
             <Route exact path="/orderHistory">
               <OrderHistory />
+            </Route>
+            <Route exact path="/refund">
+              <RefundForm />
+            </Route>
+            <Route exact path="/requestSubmitted">
+              <RefundConfirmation />
+            </Route>
+            <Route exact path="/refundRequests">
+              <RefundRequests />
             </Route>
             
           </Switch>    
