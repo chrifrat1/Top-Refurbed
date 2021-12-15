@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import Box from '@material-ui/core/Box';
 import {NavLink} from 'react-router-dom';
-
+//order confirmation form
 export default function ShowConfirmation(){
     const [detailsList, setDetailsList] = useState([])
 
@@ -19,7 +19,7 @@ export default function ShowConfirmation(){
         })
     }, [])
 
-    return(
+    return( //once the product is bought the user is directed in a order confirmed page
         <Box>
         {detailsList.map((details) => ( 
             <Box >

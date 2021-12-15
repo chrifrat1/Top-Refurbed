@@ -16,7 +16,7 @@ import { TextField } from '@material-ui/core';
 
 
 
-const statuses = [
+const statuses = [      //array that uses contstants to assign label and value to a drop down list
     {
       value: REFUND_CONFIRMED,
       label: REFUND_CONFIRMED,
@@ -37,7 +37,7 @@ export default function ManageRefundRequests(){
 
     useEffect(()=>{
         axios.get('http://localhost:5000/refunds').then((allRefunds)=>{
-            setRefundList(allRefunds.data);
+            setRefundList(allRefunds.data);   //sets the refund details 
         })
     }, [])
 
@@ -47,7 +47,7 @@ export default function ManageRefundRequests(){
         }) 
     }
 
-    return(
+    return( //prints all refund details and allow the admin to decide whether the refund is approved/declined
         <Box>
         {refundList.map((details) => ( 
             <Box >

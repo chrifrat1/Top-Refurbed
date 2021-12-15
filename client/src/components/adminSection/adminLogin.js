@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
-
+//Admin Logi  form
 
 export default function AdminLogin(){
 
@@ -17,26 +17,27 @@ export default function AdminLogin(){
     //const password;
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/admin').then((admin)=>{
+        axios.get('http://localhost:5000/admin').then((admin)=>{ //axios gets admin details from the db and 
+        //place them AdminDets
             setAdminDets(admin.data);
         })
     }, [])
 
     const detailsValidation=()=>{
-        //alert('porco di quel dio');
+        //details validation
         //{adminDets.map((admin) => (
             
-            //alert('mannaia la madonna')
+            
             
             
           //))};
     }
     
     
-    return(
+    return(  // returns interactivitity elements
         <Box>
             <h2>Admin Login</h2>
-            <TextField required id="standard-basic" label="Username" variant="standard" />
+            <TextField required id="standard-basic" label="Username" variant="standard" /> 
             <TextField required type="password" id="standard-basic" label="Password" variant="standard" />
             <div>
             <Button variant="contained" onClick={detailsValidation}> <NavLink color="inherit" className="link" to='/adminMenu'>Log In</NavLink></Button>

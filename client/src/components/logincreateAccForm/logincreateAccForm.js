@@ -11,7 +11,7 @@ import axios from 'axios';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
- 
+    //login and create account form
   
     return (
       <div
@@ -58,13 +58,14 @@ function TabPanel(props) {
       password: ''
   });
 
-  const createAccount=()=>{
+  const createAccount=()=>{  // save create account details into the database
       axios.post('http://localhost:5000/users',user).then(()=>{
           window.location.reload(false);
       }) 
   }
 
-  const detailsValidation=()=>{
+  const detailsValidation=()=>{  //details validation. takes each pair of username and password in the database
+    //and compares them with the input given. if the value corresponds the login is successful
       axios.get('http://localhost:5000/users').then((res)=>{
         
         const data=res.data;

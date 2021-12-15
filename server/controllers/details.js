@@ -1,6 +1,6 @@
 import Details from "../models/orderDetails.js";
 
-export const getDetails= async (req, res)=> {
+export const getDetails= async (req, res)=> { //get details from the database
     
 
     try {
@@ -12,7 +12,7 @@ export const getDetails= async (req, res)=> {
     }
 }
 
-export const saveDetails= async (req, res)=> {
+export const saveDetails= async (req, res)=> {  //save details into the database
     
 
     const details=req.body;

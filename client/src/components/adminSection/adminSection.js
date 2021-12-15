@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import Box from '@material-ui/core/Box';
 import {NavLink} from 'react-router-dom';
-
+// admin menu. it allows the admin to access the different admin functionalities
 export default function AdminMenu(){
     return(
         

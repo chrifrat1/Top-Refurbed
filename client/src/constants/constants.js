@@ -9,3 +9,5 @@ export const GOOGLE_PIXEL_6 = 'Google Pixel 6';
 export const REFUND_CONFIRMED ='Confirmed'
 export const REFUND_DENIED ='Denied'
 export const REFUND_PENDING='Pending'
+
+//constants are used to avoid typos in the main code

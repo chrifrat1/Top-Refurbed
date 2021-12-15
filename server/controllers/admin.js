@@ -1,6 +1,6 @@
 import Details from "../models/admin.js";
 
-export const getDetails= async (req, res)=> {
+export const getDetails= async (req, res)=> {  //get details from the database
     //res.send('Router is working (Get Student)');
 
     try {

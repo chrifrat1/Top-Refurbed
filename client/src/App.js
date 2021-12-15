@@ -27,10 +27,10 @@ import './App.css';
 import useStyles from './styles.js'
 import { mergeClasses } from '@material-ui/styles';
 import{BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
+//main app 
 function App() {
   const classes=useStyles();
-  return (
+  return ( //inside the return the are several routing elements which allow to switch between all pages
     <Router>
     <div className="App">
       <Container maxWidth="lg">

@@ -14,7 +14,7 @@ import MenuIcon from '@material-ui/core/Menu';
 import {NavLink} from 'react-router-dom';
 import "./appBar.css";
 
-
+//main menu app bar. general fixed menu for the website
 
 
 export default function ButtonAppBar() {

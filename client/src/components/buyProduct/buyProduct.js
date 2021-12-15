@@ -17,8 +17,10 @@ import './buyProduct'
 import { APPLE_IPAD_PRO, Apple_Iphone_11_Pro, GOOGLE_PIXEL_6, HUAWEI_P20, SAMSUNG_GALAXY_S21, SAMSUNG_GALAXY_Z_FOLD_2 } from '../../constants/constants';
 import { Menu } from '@material-ui/core';
 
+//buy product form. 
 
-const items = [
+
+const items = [  //array that contains value and label of each product which will be sold
   {
     value: SAMSUNG_GALAXY_S21,
     label: SAMSUNG_GALAXY_S21,
@@ -93,7 +95,8 @@ function TabPanel(props) {
       setItem(event.target.value);
     };
   
-    const [details, setOrderDets]= useState({
+    const [details, setOrderDets]= useState({  //sents array with empty values which will be filled as
+      //soon as the user types a sstring in each textbox
       item:'',
       name: '',
       surname: '',
@@ -109,11 +112,11 @@ function TabPanel(props) {
 
   const orderProduct=()=>{
     axios.post('http://localhost:5000/orderHistory',details).then(()=>{
-        window.location.reload(false);
+        window.location.reload(false); //save details in the database
     }) 
 }
 
-    return (
+    return (  //returns all textboxes and a dropdown list to allow user to purchase the product
       <Box sx={{ width: '60%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">

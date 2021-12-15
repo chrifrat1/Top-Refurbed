@@ -10,7 +10,7 @@ import axios from 'axios';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
-
+//Shows order history
 export default function ShowOrderHistory(){
     const [detailsList, setDetailsList] = useState([])
 
@@ -20,7 +20,7 @@ export default function ShowOrderHistory(){
         })
     }, [])
 
-    return(
+    return(  //prints user details such as name and surname
         <Box>
         {detailsList.map((details) => ( 
             <Box >

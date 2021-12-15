@@ -1,6 +1,6 @@
 import Refund from "../models/refund.js";
 
-export const getDetails= async (req, res)=> {
+export const getDetails= async (req, res)=> { //get details from the database
     //res.send('Router is working (Get Student)');
 
     try {
@@ -12,7 +12,7 @@ export const getDetails= async (req, res)=> {
     }
 }
 
-export const saveDetails= async (req, res)=> {
+export const saveDetails= async (req, res)=> {   //save details into the database
     //res.send('Router is working (Create Student)');
 
     const refund=req.body;

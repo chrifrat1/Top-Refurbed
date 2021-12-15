@@ -1,6 +1,6 @@
 import UserDetails from "../models/user.js";
 
-export const getUsers= async (req, res)=> {
+export const getUsers= async (req, res)=> { //get details from the database
     //res.send('Router is working (Get Student)');
 
     try {
@@ -12,7 +12,7 @@ export const getUsers= async (req, res)=> {
     }
 }
 
-export const createUser= async (req, res)=> {
+export const createUser= async (req, res)=> {  //save details into the database
     //res.send('Router is working (Create Student)');
 
     const user=req.body;

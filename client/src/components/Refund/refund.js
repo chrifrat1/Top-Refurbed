@@ -16,7 +16,7 @@ import { APPLE_IPAD_PRO, Apple_Iphone_11_Pro, GOOGLE_PIXEL_6, HUAWEI_P20, REFUND
 //import './buyProduct'
 
 
-const items = [
+const items = [  //array the contains constants product
     {
       value: SAMSUNG_GALAXY_S21,
       label: SAMSUNG_GALAXY_S21,
@@ -45,7 +45,7 @@ const items = [
 
 export default function RefundForm(){
 
-    const [refund, setRefund]= useState({
+    const [refund, setRefund]= useState({  //refund details are set
         item:'',
         name: '',
         surname: '',
@@ -54,7 +54,7 @@ export default function RefundForm(){
         
     });
 
-    const Submit=()=>{
+    const Submit=()=>{   //saves refund details in the database
         axios.post('http://localhost:5000/refunds',refund).then(()=>{
             window.location.reload(false);
         }) 
